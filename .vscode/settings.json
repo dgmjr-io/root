@@ -1,0 +1,124 @@
+{
+    "psi-header.config": {
+        "forceToTop": true,
+        "blankLinesAfter": 1,
+        "spacesBetweenYears": false,
+        "license": "MIT",
+        "author": "David G. Moore, Jr.",
+        "initials": "JC",
+        "authorEmail": "david@dgmjr.io",
+        "company": "DGMJR",
+        "copyrightHolder": "David G. Moore, Jr.",
+        "creationDateZero": "now"
+        // "hostname": "Dgmjr.com"
+    },
+    "psi-header.changes-tracking": {
+        "isActive": true,
+        "modAuthor": "Modified By:",
+        "modDate": "Last Modified:",
+        "modDateFormat": "dd/MM/yyyy hh:nn:ss",
+        "include": [
+            "msbuild",
+            "csharp",
+            "xml",
+            "yaml",
+            "markdown",
+            "shellscript",
+            "typescript"
+        ],
+        // "includeGlob": ["*.cs", "*.config", "*.props", "*.targets", "*."],
+        // "exclude": ["markdown", "json", "jsonc", "shellscript"],
+        "excludeGlob": [
+            "**/*snippet",
+            "front-matter.yml"
+        ],
+        "autoHeader": "manualSave",
+        "enforceHeader": false,
+        // "replace": [
+        //     "Filename:",
+        //     "Project"
+        // ],
+        "updateLicenseVariables": false
+    },
+    "psi-header.variables": [
+        [
+            "projectCreationYear",
+            "2022"
+        ]
+    ],
+    "psi-header.templates": [
+        {
+            "language": "*",
+            "template": [
+                "<<filename>>",
+                "",
+                "  Created: <<filecreated('YYYY-MM-DD-hh:mm:ss')>>",
+                "  Modified: <<dateformat('YYYY-MM-DD-hh:mm:ss')>>",
+                "",
+                "  Author: <<author>> <<<authoremail>>>",
+                "  ",
+                "  Copyright © <<yeartoyear(<<projectCreationYear>>, now)>> <<copyrightHolder>>, All Rights Reserved",
+                "     License: <<spdxid>> (<<licenseurl>>)"
+            ]
+        },
+        {
+            "language": "markdown",
+            "template": [
+                "author: <<author>>",
+                "author_email: <<authoremail>>",
+                "title: <<filename>>",
+                "lastmod: <<dateformat('YYYY-MM-DD-hh:mm:ss')>>",
+                "created: <<filecreated('YYYY-MM-DD-hh:mm:ss')>>",
+                "license: <<spdxid>>",
+                "keywords: ",
+                "  - DGMJR",
+                "tags: ",
+                "  - DGMJR",
+                "categories: ",
+                "  - DGMJR"
+            ]
+        }
+    ],
+    "psi-header.lang-config": [
+        {
+            "language": "xml",
+            "begin": "<!--",
+            "end": "-->"
+        },
+        {
+            "language": "msbuild",
+            "mapTo": "xml"
+        },
+        {
+            "language": "markdown",
+            "begin": "---",
+            "prefix": "",
+            "end": "---"
+        },
+        {
+            "language": "csharp",
+            "begin": "/* ",
+            "prefix": " * ",
+            "end": " */ "
+        },
+        {
+            "language": "typescript",
+            "mapTo": "csharp"
+        },
+        {
+            "language": "yaml",
+            "mapTo": "shellscript"
+        },
+        {
+            "language": "shellscript",
+            "begin": "# ",
+            "prefix": "# ",
+            "end": "# "
+        }
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#253214",
+        "titleBar.activeBackground": "#34451B",
+        "titleBar.activeForeground": "#F9FBF6"
+    }
+}
